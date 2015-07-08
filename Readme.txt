@@ -1,4 +1,4 @@
-**--Welcome to the EZProxy IP Address Blacklist--**
+**Welcome to the EZProxy IP Address Blacklist**
 
 This information was formally located on The Unofficial EZproxy Self-Support Wiki: https://pluto.potsdam.edu/ezproxywiki/index.php/IP_Address_Blacklist
 
