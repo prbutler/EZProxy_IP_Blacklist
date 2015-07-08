@@ -1,28 +1,33 @@
 --Welcome to the EZProxy IP Address Blacklist--
 
-This information was formally located at: https://pluto.potsdam.edu/ezproxywiki/index.php/IP_Address_Blacklist
+This information was formally located on The Unofficial EZproxy Self-Support Wiki: https://pluto.potsdam.edu/ezproxywiki/index.php/IP_Address_Blacklist
 
-This is a list of contributed IP addresses and ranges that have been used to access, or attempt to access, EZproxy servers in an illegitimate way. This information can be used in a number of ways to better secure EZproxy.
+EZProxy_IP_Address_Blacklist_RejectIP.txt is a list of contributed IP addresses and ranges that have been used to access, or attempt to access, EZproxy servers in an illegitimate way. This information can be used in a number of ways to better secure EZproxy.
 
-EZproxy must be restarted for changes to config.txt to take effect.
+NOTE: EZproxy must be restarted for changes to config.txt to take effect.
 
 --RejectIP--
+
+For use with the file: EZProxy_IP_Address_Blacklist_RejectIP.txt
+
 IP addresses and ranges can be used in config.txt as a simple list of RejectIP directives, like this:
 RejectIP 123.123.123.123
 RejectIP 41.42.0.0-41.42.255.255
 
-You may also create a list of RejectIP statements in an external file and use an include directive in config.txt to include that file. An example, create the file EZProxy_IP_Address_Blacklist_RejectIP.txt in your EZproxy directory that contains your RejectIP statements. Then use the following statement in config.txt to include the file.
+You may also create a list of RejectIP statements in an external file and use an include directive in config.txt to include that file. For example, create the file EZProxy_IP_Address_Blacklist_RejectIP.txt in your EZproxy directory that contains your RejectIP statements. Then use the following statement in config.txt to include the file:
 
 IncludeFile EZProxy_IP_Address_Blacklist_RejectIP.txt
-
-RejectIP does not create an entry in EZproxy audit files for a rejected IP address. A method for creating an audit entry has been documented at the Restricted IP Logging and Response page.
 
 OCLC has documentation at their RejectIP page here: http://www.oclc.org/support/services/ezproxy/documentation/cfg/rejectip.en.html
 
 --IFIP--
-Or in user.txt when, upon authentication, routes to a given html page and writes a given messages in the audit, like this:
+For use with file: EZProxy_IP_Address_Blacklist_IFIP.txt
 
-IfIP 123.123.0.0-123.123.255.255; Audit entry to write; Deny deny.htm
+RejectIP does not create an entry in the EZproxy audit files for a rejected IP address. An alternative method to RejectIP for blocking and creating an audit entry has been documented on the Unofficial EZproxy Self-Support Wiki at the Restricted IP Logging and Response page: https://pluto.potsdam.edu/ezproxywiki/index.php/Restricted_IP_Logging_and_Response
+
+This method, upon authentication, routes the user to a given html page and writes a given messages in the audit file. In User.txt the entry would be:  
+
+IfIP 123.123.0.0-123.123.255.255; Audit whatever_ message_you_want; Deny deny.htm
 
 IFIP allows a single IP address as well as IP ranges.
 
