@@ -1,8 +1,11 @@
-**Welcome to the EZProxy IP Address Blacklist**
+**--Welcome to the EZProxy IP Address Blacklist--**
 
 This information was formally located on The Unofficial EZproxy Self-Support Wiki: https://pluto.potsdam.edu/ezproxywiki/index.php/IP_Address_Blacklist
 
 EZProxy_IP_Address_Blacklist_RejectIP.txt is a list of contributed IP addresses and ranges that have been used to access, or attempt to access, EZproxy servers in an illegitimate way. This information can be used in a number of ways to better secure EZproxy.
+
+This list is maintained by Paul Butler at Ball State University. 
+To contribute an IP address(es) to the list email them to: prbutler@bsu.edu
 
 NOTE: EZproxy must be restarted for changes to config.txt to take effect.
 

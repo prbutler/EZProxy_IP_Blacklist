@@ -1,4 +1,6 @@
 ## EZProxy_IP_Address_Blacklist_IFIP
+## Maintained by Paul Butler at Ball State University
+## To contribute an IP address(es) to the list email them to: prbutler@bsu.edu
 ## Last updated: 2015-06-17
 
 IFIP 1.179.197.9 ; Set Match = "True"
