@@ -1,0 +1,86 @@
+--RESTRICTED IP LOGGING AND RESPONSE--
+
+Below is the contents of the "Restricted IP Logging and Response" page that was located on the The Unofficial EZproxy Self-Support Wiki here: https://pluto.potsdam.edu/ezproxywiki/index.php/Restricted_IP_Logging_and_Response
+
+All work below is by Duane Denham, Edmon Low Library, Oklahoma State University. I added this page to GitHub because it is a valuable technique that works in tandem with the EZProxy IP blacklist and I wanted to document his work somewhere. All credit goes to Duane Denham. 
+
+--CAUTION-– 
+The following method has been successfully tested with the Windows implementation of EZproxy, versions 5.1 through 5.6.2.1 and version 5.7.32. All versions of 5.7 up to and including 5.7.32 contain a known bug (EZPROX-904) that cause a “browser connection error” message to be displayed in the end users browser and will cause EZproxy to restart. This method has not been tested on the Linux or Solaris implementation of EZproxy however no implementation issues are anticipated as long as the EZproxy version restrictions are observed.
+
+--OVERVIEW--
+One of the options available to the EZproxy community to be able to respond to unauthorized access attempts is RejectIP however; the inability of the command to log connection attempts deprives administrators of useful security information. The following method allows logging of connection attempts in the Audit Log from restricted IP addresses as well as the user id associated with each attempt.
+
+This process uses one or more files that contain IP addresses that need to be restricted from accessing EZproxy. The reason that multiple files might be advantageous is that it allows a granularity in response to a connection attempt from a particular group of addresses. E.g. The response to a connection attempt from an address that is restricted due to a technical or administrative reason would likely be different from the response to a connection attempt from an address that has been associated with suspicious activity.
+
+--BACKGROUND INFORMATION AND COMMENTARY--
+Note: LDAP, text file and locally defined user accounts in user.txt were the authentication methods used during development. The infrastructure to test other authentication methods was unavailable. The following commentary is based on the test results obtained during development and interpretation of certain phrases and syntax structures in the EZproxy documentation.
+
+While not explicitly defined in the EZproxy documentation, there appear to be two classes of user authentication methods. The first class is sometimes referred to in the documentation as “built-in”. Examples of this class include:
+	Locally defined accounts in user.txt
+	Text file
+	FTP
+	IMAP
+	POP
+	Radius
+
+The second class is referenced in the "Common Conditions and Actions" section of the EZproxy documentation as "Extended Authentication and Authorization Methods". Examples of this class include:
+	LDAP
+	CAS
+	III
+	DRA Web2
+
+Based on admittedly limited testing, the most distinguishing characteristic between the two methods, at least as it applies to the Restricted IP Logging method, is that authentication methods in the first class appear to execute an implicit “STOP” command after a successful authentication. Regardless of the actual mechanism, the result is that all attempts to execute “Common Condition” or “Extended Authentication” statements after authentication failed.
+
+Therefore, authentication methods in the second class would be better candidates to implement Restricted IP Logging than methods in the first class. It may be possible to use methods in the first class but to date I have not found the right arrangement of statements to achieve it.
+
+--HOW TO DO IT--
+***Step 1*** - Create a file containing the restricted IPs for a particular response
+Create a file using the following format.
+
+	::Common
+	IFIP ip,ip,ip… ; Set Match = "True"
+	(repeat line above as needed - see notes)
+	/Common
+
+Save this file in the EZproxy root directory and repeat if you have additional IP/response scenarios.
+
+Notes:
+- I keep a few master files of addresses (that have been designated restricted for one reason or another) in a one address per line format so I can easily scan through them in case I receive a query about a particular address.
+- Since the master files are not directly usable in the IFIP lines, I created RestrictedIPparser.exe to automate the creation and maintenance of the production files used in Step 1. Click here to download: http://argo.library.okstate.edu/public/RestrictedIPparser.zip
+- RestrictedIPparser has the following attributes:
+	- The program verifies that the addresses in the master file are valid “public” IP addresses and reformats them into IFIP statements. “Public” in this context means an address is not specified in the RFCs listed at http://en.wikipedia.org/wiki/Reserved_IP_addresses with the exception of address contained in RFC 1918 (https://tools.ietf.org/html/rfc1918). Since many organizations use these “private network” addresses internally, they are considered “public” for the purposes of this application.
+	- While developing this method, I queried OCLC and learned that when EZproxy is parsing a line in user.txt that line is loaded into a temporary variable that has a limit of 8192 characters. Therefore, the program limits the number of IPs in the IFIP statements to 8150 characters or less (this value also includes the initial 5 characters for “IFIP “) and then appends the default action statement - ; Set Match = “TRUE”. Optionally the program will accept a user specified action statement up to 40 characters in length in lieu of the default statement.
+	- The program also adds the Common statements at the beginning and end of the file.
+	- To allow for some documentation and comments in a master file, the program will skip any line in the master file that begins with the EZproxy comment character (#). To allow for comments related to a specific IP address, the program will skip any subsequent text on a line after parsing a valid IP. The program also keeps a log of errors that occur and the number of addresses successfully processed during a run.
+	- RestrictedIPparser is a command line style program and runs on any version of Windows so it can be used a part of a batch process or scheduled task. The program only recognizes IPv4 addresses. I am looking into doing an IPv6 equivalent but it is, at present, a low priority.
+- I suspect that other EZproxy sites will construct an equivalent program that incorporates customizations for their environment (e.g. input file format, OS platform, etc.). I encourage those who can to make their programs available to the EZproxy community.
+
+***Step 2*** – Add the following statements to user.txt as indicated in the Notes
+	If UserFile ("restrictedIPfilename") 
+	If Match eq "True"; Audit whatever_ message_you_want;  Deny denyfile.htm
+
+Notes:
+- The statements must be contained within an authentication block and must be duplicated within each block if you use multiple authentication methods.
+- Normally the Step 2 statements would be placed prior to any statement containing a STOP command. E.g.
+	::LDAP
+	<Statements go here>
+	BindUser ...
+	BindPass ...
+	URL ...
+
+	<Or here>
+
+	IfUnauthenticated;  Stop
+	/LDAP
+
+This would log connection attempts regardless if the user successfully authenticated or not. However, if you only want to log successful authentications from restricted addresses place the Step 2 statements after “IFUnauthenticated”.
+- If the statements are contained in a Common block that is placed before the authentication blocks in user.txt, the connection attempt will be processed but the user name will not be recorded since the Deny statement would be executed before the login screen is displayed.
+- Theoretically, different action statements or expression structures could be used in place of Deny to provide additional response scenarios however only Deny has been tested.
+- If you vary the structure of the statements in Step 2, thoroughly test the changes. Combining these two statements should be possible however any variation from the listed structure resulted in either an error message or the connection attempt succeeded when it should have failed.
+- Two files were created to test what effect these changes might have on the login process. One of approximately 80,000 IP addresses acquired from sites listing open proxy servers and second with IP addresses that have been involved is some form of malicious behavior. Tests were run with each file individually and with both files in the authentication block. E.g.
+	If UserFile ("OpenProxyList.txt")
+	If Match eq "True"; Audit whatever_ message_you_want;  Deny denyfile1.htm
+	If UserFile ("SuspiciousAddresses.txt")
+	If Match eq "True"; Audit whatever_ message_you_want;  Deny denyfile2.htm
+
+No noticeable degradation in login process was observed in any of the tests and no problem reports related to these changes have been received since implementation in the production server in late December 2013.
