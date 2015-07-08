@@ -25,7 +25,9 @@ OCLC provides documentation on RejectIP here: http://www.oclc.org/support/servic
 --IFIP--
 For use with file: EZProxy_IP_Address_Blacklist_IFIP.txt
 
-RejectIP does not create an entry in the EZproxy audit files for a rejected IP address. An alternative method to RejectIP for blocking and creating an audit entry has been documented on the Unofficial EZproxy Self-Support Wiki at the Restricted IP Logging and Response page: https://pluto.potsdam.edu/ezproxywiki/index.php/Restricted_IP_Logging_and_Response
+RejectIP does not create an entry in the EZproxy audit files for a rejected IP address. An alternative method to RejectIP for blocking and creating an audit entry was documented on the Unofficial EZproxy Self-Support Wiki at the Restricted IP Logging and Response page: https://pluto.potsdam.edu/ezproxywiki/index.php/Restricted_IP_Logging_and_Response
+
+Since the future of the the wiki is in flux and the technique is important, I added the contents of the wiki page to a text file in this repo. All credit for this work goes to Duane Denham. See the file here: https://github.com/prbutler/EZProxy_IP_Blacklist/blob/master/Restricted_IP_Logging_and_Response.txt
 
 This method, upon authentication, routes the user to a given html page (deny.htm in the example below) and writes a given messages in the audit file (whatever_ message_you_want in the example below). In User.txt the entry would be:  
 
