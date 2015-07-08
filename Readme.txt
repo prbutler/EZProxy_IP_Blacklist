@@ -24,6 +24,7 @@ You may also create a list of RejectIP statements in an external file and use an
 OCLC provides documentation on RejectIP here: http://www.oclc.org/support/services/ezproxy/documentation/cfg/rejectip.en.html
 
 --IFIP--
+
 For use with file: EZProxy_IP_Address_Blacklist_IFIP.txt
 
 RejectIP does not create an entry in the EZproxy audit files for a rejected IP address. An alternative method to RejectIP for blocking and creating an audit entry has been documented on the Unofficial EZproxy Self-Support Wiki at the Restricted IP Logging and Response page: https://pluto.potsdam.edu/ezproxywiki/index.php/Restricted_IP_Logging_and_Response
