@@ -1,4 +1,4 @@
-## EZProxy IP Address Blacklist - IFIP
+## EZProxy_IP_Address_Blacklist_IFIP
 ## Last updated: 2015-06-17
 
 IFIP 1.179.197.9 ; Set Match = "True"

@@ -1,4 +1,4 @@
-## EZProxy IP Address Blacklist
+## EZProxy_IP_Address_Blacklist_RejectIP
 ## Last updated: 2015-06-17
 
 RejectIP 1.179.197.9
