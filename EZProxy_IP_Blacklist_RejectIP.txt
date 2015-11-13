@@ -1,7 +1,8 @@
 ## EZProxy_IP_Blacklist_RejectIP.txt
 ## Maintained by Paul Butler at Ball State University
 ## To contribute an IP address(es) to the list email them to: prbutler@bsu.edu
-## Last updated: 2015-08-06
+## Last updated: 2015-11-13
+
 
 RejectIP 1.179.197.9
 RejectIP 1.186.219.146
