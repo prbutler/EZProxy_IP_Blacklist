@@ -1,6 +1,6 @@
 --Welcome to the EZProxy IP Address Blacklist--
 
-This information was formally located on The Unofficial EZproxy Self-Support Wiki: https://pluto.potsdam.edu/ezproxywiki/index.php/IP_Address_Blacklist
+This information was formerly located on The Unofficial EZproxy Self-Support Wiki, which is shutdown. 
 
 EZProxy_IP_Blacklist_RejectIP.txt is a list of contributed IP addresses and ranges that have been used to access, or attempt to access, EZproxy servers in an illegitimate way. This information can be used in a number of ways to better secure EZproxy. EZProxy_IP_Blacklist_IFIP.txt contains the same IP addresses presented EZProxy_IP_Blacklist_RejectIP.txt, but in a different format to be used with the IFIP method outlined below. 
 
@@ -27,9 +27,9 @@ For use with file: EZProxy_IP_Blacklist_IFIP.txt - https://github.com/prbutler/E
 
 RejectIP does not create an entry in the EZproxy audit files for a rejected IP address. An alternative method to RejectIP for blocking and creating an audit entry was documented on the Unofficial EZproxy Self-Support Wiki at the Restricted IP Logging and Response page: https://pluto.potsdam.edu/ezproxywiki/index.php/Restricted_IP_Logging_and_Response
 
-Since the future of the the wiki is in flux and the technique is important, I added the contents of the wiki page to a text file in this repo. All credit for this work goes to Duane Denham. See the file here: https://github.com/prbutler/EZProxy_IP_Blacklist/blob/master/Restricted_IP_Logging_and_Response.txt
+Since the wiki was closed and the technique is important, I added the contents of the wiki page to a text file in this repo. All credit for this work goes to Duane Denham, Computer Specialist at Oklahoma State University. See the file here: https://github.com/prbutler/EZProxy_IP_Blacklist/blob/master/Restricted_IP_Logging_and_Response.txt
 
-This method, upon authentication, routes the user to a given html page (deny.htm in the example below) and writes a given messages in the audit file (whatever_message_you_want in the example below). In user.txt the entry would be:  
+This method, upon authentication, routes the user to a given html page (deny.htm in the example below) and writes a given message in the audit file (whatever_message_you_want in the example below). In user.txt the entry would be:  
 
 IfIP 123.123.0.0-123.123.255.255; Audit whatever_message_you_want; Deny deny.htm
 
@@ -44,10 +44,21 @@ The IP addresses listed here may also be used at the server or network level to 
 If you are running EZproxy behind a load balancer, it is likely that your EZproxy server will only get requests from the load balancer's pool of IP addresses. This list can be used to reject hosts, but it should be implemented in the load balancer's configuration itself.
 
 --Best Practices--
-A common practice for fraudulent users is to first login to a VPN with a compromised account from institution X, and while logged into the VPN use a second compromised account from institution Y to access institution Y's proxied resources. This practice is used to conceal the country from which they are accessing EZProxy and/or circumvent block country directives. When investigating a compromised account if you identify this situation it is a good practice to send an email to abuse@the.school.edu detailing the time/date and IP address used. You can quickly identify the abuse email address for an institution by performing a whois lookup on the IP address in question. Useful sites for this are: http://whois.arin.net/ and http://www.iplocation.net/. Another option is to block IP ranges for other institutions. Some institutions have listed their IP ranges here: https://github.com/bertrama/ezproxy-config/blob/master/reject-ip-vpn
+A common practice for fraudulent users is to first login to a VPN with a compromised 
+account from institution X, and while logged into the VPN use a second compromised account 
+from institution Y to access institution Y's proxied resources. This practice is used to 
+conceal the country from which they are accessing EZProxy and/or circumvent block country 
+directives. When investigating a compromised account if you identify this situation it is 
+a good practice to send an email to abuse@the.school.edu detailing the time/date and IP 
+address used. You can quickly identify the abuse email address for an institution by 
+performing a whois lookup on the IP address in question. Useful sites for this are: 
+http://whois.arin.net/ui/ and https://www.iplocation.net/. Another option is to block IP 
+ranges for other institutions. Some institutions have listed their IP ranges here: 
+https://github.com/bertrama/ezproxy-config/blob/master/reject-ip-vpn
 
-Several public websites provide information about IP addresses, such as the ISP/provider or geographic location, which is helpful when investigating compromised user accounts. Such examples include: 							
-	http://www.whatismyip.com/ip-address-lookup/?iref=cta 	
+Several public websites provide information about IP addresses, such as the ISP/provider or geographic location, which is helpful when investigating compromised user accounts. Such examples include: 	
+	https://www.iplocation.net/
+	https://www.whatismyip.com/ip-address-lookup/?iref=cta
 	https://www.projecthoneypot.org/search_ip.php
 	http://www.ip-tracker.org/locator/ip-lookup.php
 	
@@ -66,4 +77,13 @@ Method used to add " ; Set Match = "True"" to the end of each line, by using fin
 Find: $
 Replace:  ; Set Match = "True"
 
-In Notepad++, be sure that under Search Mode in Find/Replace Regular Expresses has been selected for the above to work.
+Using NotePad++, to find errant characters in a list of bare addresses using the following Find:
+([[:alpha:]])|([[:blank:]])|([[:unicode:]])|(["'?!;:#$%&()*+/<>=@\^_{}|~])
+
+An explanation of the search:
+	[[:alpha:]] - search for letters
+	[[:blank:]] - search for blank spaces
+	[[:unicode:]] - search for unicode chars
+	["'?!;:#$%&()*+/<>=@\^_{}|~] - search for special characters, but not -, [, or ]. Search for [] by turning off Reg Exp searches. - and . are allowed as they part of addresses and ranges.  
+
+In Notepad++, be sure that under Search Mode in Find/Replace Regular Expresses has been selected for the above Find commands to work.

@@ -1,7 +1,7 @@
 ## EZProxy_IP_Blacklist_RejectIP.txt
 ## Maintained by Paul Butler at Ball State University
 ## To contribute an IP address(es) to the list email them to: prbutler_at_bsu.edu
-## Last updated: 2016-03-10
+## Last updated: 2016-03-30
 
 RejectIP 1.9.14.55
 RejectIP 1.23.240.66
@@ -242,7 +242,6 @@ RejectIP 23.254.6.35
 RejectIP 23.254.164.88
 RejectIP 24.68.34.136
 RejectIP 24.89.176.254
-RejectIP 24.116.21.65
 RejectIP 24.123.208.82
 RejectIP 24.167.76.187
 RejectIP 24.172.34.114
@@ -590,7 +589,6 @@ RejectIP 58.67.193.66
 RejectIP 58.97.174.170
 RejectIP 58.97.215.91
 RejectIP 58.155.74.22
-RejectIP 58.165.132.0-58.165.132.255
 RejectIP 58.198.90.175
 RejectIP 58.210.42.59
 RejectIP 58.210.73.2
@@ -768,6 +766,7 @@ RejectIP 60.206.66.117
 RejectIP 60.206.230.82
 RejectIP 60.208.6.153
 RejectIP 60.208.6.156
+RejectIP 60.208.135.22
 RejectIP 60.209.29.210
 RejectIP 60.213.232.39
 RejectIP 60.213.232.41
@@ -878,7 +877,6 @@ RejectIP 61.178.69.102
 RejectIP 61.178.233.199
 RejectIP 61.180.241.19
 RejectIP 61.181.128.9
-RejectIP 61.181.248.142
 RejectIP 61.182.84.179
 RejectIP 61.182.229.142
 RejectIP 61.183.137.105
@@ -1049,6 +1047,7 @@ RejectIP 72.201.172.0-72.201.172.255
 RejectIP 72.213.182.246
 RejectIP 72.245.244.246
 RejectIP 73.50.214.113
+RejectIP 73.133.235.107
 RejectIP 73.139.92.147
 RejectIP 73.140.124.244
 RejectIP 73.172.206.241
@@ -1116,6 +1115,7 @@ RejectIP 76.28.93.216
 RejectIP 76.73.41.50
 RejectIP 76.74.237.61
 RejectIP 76.164.214.82
+RejectIP 76.164.234.12
 RejectIP 77.37.218.63
 RejectIP 77.46.212.125
 RejectIP 77.50.220.91
@@ -1328,6 +1328,7 @@ RejectIP 95.26.0.192
 RejectIP 95.38.32.66
 RejectIP 95.51.93.138
 RejectIP 95.85.162.133
+RejectIP 95.110.167.140
 RejectIP 95.143.41.21
 RejectIP 95.162.172.249
 RejectIP 95.168.217.24
@@ -4396,6 +4397,7 @@ RejectIP 192.161.54.71
 RejectIP 192.173.33.84
 RejectIP 192.173.33.106
 RejectIP 192.173.35.225
+RejectIP 192.188.59.190
 RejectIP 192.198.7.118
 RejectIP 192.200.195.100
 RejectIP 192.200.196.164
@@ -5502,6 +5504,7 @@ RejectIP 212.68.44.133
 RejectIP 212.68.51.58
 RejectIP 212.73.73.252
 RejectIP 212.82.126.32
+RejectIP 212.83.177.138
 RejectIP 212.91.188.166
 RejectIP 212.113.35.98
 RejectIP 212.123.20.88
