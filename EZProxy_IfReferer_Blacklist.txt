@@ -1,0 +1,34 @@
+############################################### 
+## EZProxy_IfReferer_Blacklist.txt
+## Maintained by Paul Butler at Ball State University
+## To contribute a domain to the list email it to: prbutler_at_bsu.edu
+## This IFReferer denies access to EZProxy from the defined domain, records it in your audit file, and
+## 	redirects the user to denied.htm. You must have referer setup in the LogFormat for this to work 
+##  and denied.htm in the EZProxy \docs folder. This common block should be near the top of user.txt
+##  above your authentication methods. 
+##  See: https://www.oclc.org/support/services/ezproxy/documentation/usr/common.en.html
+## Last updated: 2016-08-29
+
+::Common
+IfReferer *91lib.com*; Deny denied.htm
+IfReferer *agiso.com*; Deny denied.htm
+IfReferer *aizhong365.net*; Deny denied.htm
+IfReferer *book4you.org*; Deny denied.htm
+IfReferer *ebookfi.org*; Deny denied.htm
+IfReferer *free-books.us.to*; Deny denied.htm
+IfReferer *freemehai.net*; Deny denied.htm
+IfReferer *gen.lib.rus.ec*; Deny denied.htm
+IfReferer *journal-passwords.com*; Deny denied.htm
+IfReferer *libgen.io*; Deny denied.htm
+IfReferer *maghalehisi.ir*; Deny denied.htm
+IfReferer *mengxz.com*; Deny denied.htm
+IfReferer *opensample.info*; Deny denied.htm
+IfReferer *qiegan.com*; Deny denied.htm
+IfReferer *reaxyslib.com*; Deny denied.htm
+IfReferer *sci-hub.org*; Deny denied.htm
+IfReferer *taobao.com*; Deny denied.htm
+IfReferer *tianyuan520.com*; Deny denied.htm
+IfReferer *webhostbox.net*; Deny denied.htm
+IfReferer *yayabuluo.com*; Deny denied.htm
+/Common
+############################################### 
