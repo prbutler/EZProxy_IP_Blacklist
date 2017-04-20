@@ -13,12 +13,12 @@
 ##    and then connects to EZProxy with these referers they will not be blocked. The list of domains can still
 ##	  be useful to search your .log file. This is a simple search command that can be used with Cygwin (https://www.cygwin.com)
 ##	  in a Windows environment. Be sure to update FILENAME to match the name of your local file. The output file is called output.txt. 
-##    grep -E  '163.com|91lib|agiso|aizhong365|book4you|cmpscience.com|doc88.com|ebookfi|free-books|freemehai|gen.lib|journal-passwords|libgen|maghalehisi|mengxz|myescience|opensample|ppdzs|pubmed007|qiegan|reaxyslib|scifans.net|sci-hub|scihub|www.so.com|taobao|tianyuan520|weare.ir|webhostbox|wenku.baidu.com|xuebalib|yayabuluo' FILENAME.log > output.txt
+##    grep -E  '163.com|91lib|agiso|aizhong365|book4you|bookfi.org|bookos.org|bookza.org|bookzz.org|cmpscience.com|doc88.com|ebookfi|elibrary.ru|free-books|freemehai|gen.lib|journal-passwords|libgen|maghalehisi|mengxz|myescience|opensample|ppdzs|pubmed007|qiegan|reaxyslib|scifans.net|sci-hub|scihub|seek68.cn|www.so.com|taobao|tianyuan520|weare.ir|webhostbox|wenku.baidu.com|xuebalib|yayabuluo' FILENAME.log > output.txt
 ##
 ## This list of domains has no connection/relationship with the IP Blacklist, it is just another method
 ##  to help secure EZProxy. This file and the IP list can be used independent of each other. 
 ##
-## Last updated: 2017-03-28
+## Last updated: 2017-04-20
 
 ::Common
 IfReferer *163.com*; Deny denied.htm
@@ -26,9 +26,14 @@ IfReferer *91lib.com*; Deny denied.htm
 IfReferer *agiso.com*; Deny denied.htm
 IfReferer *aizhong365.net*; Deny denied.htm
 IfReferer *book4you.org*; Deny denied.htm
+IfReferer *bookfi.org*; Deny denied.htm
+IfReferer *bookos.org*; Deny denied.htm
+IfReferer *bookza.org*; Deny denied.htm
+IfReferer *bookzZ.org*; Deny denied.htm
 IfReferer *cmpscience.com*; Deny denied.htm
 IfReferer *doc88.com*; Deny denied.htm
 IfReferer *ebookfi.org*; Deny denied.htm
+IfReferer *elibrary.ru*; Deny denied.htm
 IfReferer *free-books.us.to*; Deny denied.htm
 IfReferer *freemehai.net*; Deny denied.htm
 IfReferer *gen.lib.rus.ec*; Deny denied.htm
@@ -45,6 +50,7 @@ IfReferer *reaxyslib.com*; Deny denied.htm
 IfReferer *scifans.net*; Deny denied.htm
 IfReferer *sci-hub*; Deny denied.htm
 IfReferer *scihub*; Deny denied.htm
+IfReferer *seek68.cn*; Deny denied.htm
 IfReferer *www.so.com*; Deny denied.htm
 IfReferer *taobao.com*; Deny denied.htm
 IfReferer *tianyuan520.com*; Deny denied.htm
