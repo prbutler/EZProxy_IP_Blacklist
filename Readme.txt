@@ -93,3 +93,6 @@ Error message in messages.txt:
 	Unrecognized EZproxy_IP_Blacklist_RejectIP.txt(1): ï»¿## EZProxy_IP_Blacklist_RejectIP.txt
 
 This was encountered in a Linux environment, but did not impact RejectIP functionality. This is caused by a byte order mark at the start of the file, likely a result of the manner in which the file was created. In NotePad++, go to the Encoding menu option to confirm the encoding for your copy of EZproxy_IP_Blacklist_RejectIP.txt. You do not want it set to UTF-8 BOM. Changing the encoding to ASCII or UTF-8 and then using Save As should create a new file that will work, or try recreating the text file in a different manner. See this page for more information: https://www.w3.org/International/questions/qa-byte-order-mark 
+
+--License--
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. http://creativecommons.org/licenses/by-sa/4.0/

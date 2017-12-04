@@ -18,7 +18,10 @@
 ## This list of domains has no connection/relationship with the IP Blacklist, it is just another method
 ##  to help secure EZProxy. This file and the IP list can be used independent of each other. 
 ##
-## Last updated: 2017-09-27
+## This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+## http://creativecommons.org/licenses/by-sa/4.0/
+##
+## Last updated: 2017-12-04
 
 ::Common
 IfReferer *163.com*; Deny denied.htm
