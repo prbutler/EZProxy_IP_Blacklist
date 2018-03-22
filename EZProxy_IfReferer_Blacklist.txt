@@ -43,6 +43,7 @@ IfReferer *free-books.us.to*; Deny denied.htm
 IfReferer *freemehai.net*; Deny denied.htm
 IfReferer *gen.lib.rus.ec*; Deny denied.htm
 IfReferer *journal-passwords.com*; Deny denied.htm
+IfReferer *keti8.com*; Deny denied.htm
 IfReferer *libgen.io*; Deny denied.htm
 IfReferer *libgen.pw*; Deny denied.htm
 IfReferer *maghalehisi.ir*; Deny denied.htm
