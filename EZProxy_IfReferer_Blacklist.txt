@@ -13,7 +13,7 @@
 ##    and then connects to EZProxy with these referers they will not be blocked. The list of domains can still
 ##	  be useful to search your .log file. This is a simple search command that can be used with Cygwin (https://www.cygwin.com)
 ##	  in a Windows environment. Be sure to update FILENAME to match the name of your local file. The output file is called output.txt. 
-##    grep -E  '163.com|91lib|aaaaarg.fail|agiso|aizhong365|b-ok.org|book4you|bookfi.net|bookfi.org|bookos.org|bookza.org|bookzz.org|cheme.blog.ir|cmpscience.com|doc88.com|ebookfi|free-books|freemehai|gen.lib|journal-passwords|keti8|libgen|maghalehisi|magzdb.org|mengxz|myescience|opensample|passfans.com|ppdzs|pubmed007|qiegan|reaxyslib|scifans.net|sci-hub|scihub|seek68.cn|www.so.com|taobao|tianyuan520|weare.ir|webhostbox|wenku.baidu.com|xttsg.com|xuebalib|yayabuluo' FILENAME.log > output.txt
+##    grep -E  '163.com|2447.net|91lib|aaaaarg.fail|agiso|aizhong365|b-ok.org|book4you|bookfi.net|bookfi.org|bookos.org|bookza.org|bookzz.org|cheme.blog.ir|cmpscience.com|doc88.com|ebookfi|free-books|freemehai|gen.lib|journal-passwords|keti8|libgen|maghalehisi|magzdb.org|mengxz|myescience|opensample|passfans.com|ppdzs|pubmed007|qiegan|reaxyslib|scifans.net|sci-hub|scihub|seek68.cn|www.so.com|taobao|tianyuan520|weare.ir|webhostbox|wenku.baidu.com|xttsg.com|xuebalib|yayabuluo' FILENAME.log > output.txt
 ##
 ## This list of domains has no connection/relationship with the IP Blacklist, it is just another method
 ##  to help secure EZProxy. This file and the IP list can be used independent of each other. 
@@ -21,10 +21,11 @@
 ## This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 ## http://creativecommons.org/licenses/by-sa/4.0/
 ##
-## Last updated: 2018-05-10
+## Last updated: 2019-02-01
 
 ::Common
 IfReferer *163.com*; Deny denied.htm
+IfReferer *2447.net*; Deny denied.htm
 IfReferer *91lib.com*; Deny denied.htm
 IfReferer *aaaaarg.fail*; Deny denied.htm
 IfReferer *agiso.com*; Deny denied.htm
