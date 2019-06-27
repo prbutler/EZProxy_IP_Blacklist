@@ -20,12 +20,12 @@ You may also create a list of RejectIP statements in an external file and use an
 
 	IncludeFile EZProxy_IP_Blacklist_RejectIP.txt
 
-OCLC provides documentation on RejectIP here: http://www.oclc.org/support/services/ezproxy/documentation/cfg/rejectip.en.html
+OCLC provides documentation on RejectIP here: https://help.oclc.org/Library_Management/EZproxy/Configure_resources/RejectIP
 
 --IFIP--
 For use with file: EZProxy_IP_Blacklist_IFIP.txt - https://github.com/prbutler/EZProxy_IP_Blacklist/blob/master/EZProxy_IP_Blacklist_IFIP.txt
 
-RejectIP does not create an entry in the EZproxy audit files for a rejected IP address. An alternative method to RejectIP for blocking and creating an audit entry was documented on the Unofficial EZproxy Self-Support Wiki at the Restricted IP Logging and Response page: https://pluto.potsdam.edu/ezproxywiki/index.php/Restricted_IP_Logging_and_Response
+RejectIP does not create an entry in the EZproxy audit files for a rejected IP address. An alternative method to RejectIP for blocking and creating an audit entry was documented on the Unofficial EZproxy Self-Support Wiki at the Restricted IP Logging and Response page.
 
 Since the wiki was closed and the technique is important, I added the contents of the wiki page to a text file in this repo. All credit for this work goes to Duane Denham, Computer Specialist at Oklahoma State University. See the file here: https://github.com/prbutler/EZProxy_IP_Blacklist/blob/master/Restricted_IP_Logging_and_Response.txt
 
@@ -35,7 +35,7 @@ IfIP 123.123.0.0-123.123.255.255; Audit whatever_message_you_want; Deny deny.htm
 
 IFIP allows a single IP address as well as IP ranges. You can also use an include directive to link to a file that contains a list of IfIP directives. 
 
-OCLC provides documentation on IfIP at their Common Conditions and Actions page here: http://www.oclc.org/support/services/ezproxy/documentation/usr/common.en.html
+OCLC provides documentation on IfIP at their Common Conditions and Actions page here: https://help.oclc.org/Library_Management/EZproxy/Authenticate_users/Directives_and_configurations_for_authentication/Common_conditions_and_actions
 
 --Additional Uses--
 The IP addresses listed here may also be used at the server or network level to block access to EZproxy and other campus resources. The specific methods to do so are too varied to outline here; network security personnel or server administrators at your institution should be consulted.
@@ -60,9 +60,9 @@ Several public websites provide information about IP addresses, such as the ISP/
 	https://www.iplocation.net/
 	https://www.whatismyip.com/ip-address-lookup/?iref=cta
 	https://www.projecthoneypot.org/search_ip.php
-	http://www.ip-tracker.org/locator/ip-lookup.php
+	https://www.ip-tracker.org/locator/ip-lookup.php
 	
-The RejectIP directive redirects a user to reject.htm. It is good practice to provide legitimate users a way to contact your institution when they arrive at reject.htm. Examples include a link to a chat function or an email address. For troubleshooting it is helpful to suggest to the user a method to identity their IP address. Most users are familiar with Google, so https://www.google.com/#q=what's+my+ip is a good link to include on reject.htm.
+The RejectIP directive redirects a user to reject.htm. It is good practice to provide legitimate users a way to contact your institution when they arrive at reject.htm. Examples include a link to a chat function or an email address. For troubleshooting it is helpful to suggest to the user a method to identity their IP address. Most users are familiar with Google, so https://www.google.com/search?q=what%27s+my+ip&cad=h is a good link to include on reject.htm.
 
 --Notes--
 Bash command used to sort a list of IP addresses and IP ranges (only works on a file of IP addresses without RejectIP):
