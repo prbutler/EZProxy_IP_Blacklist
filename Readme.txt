@@ -37,6 +37,9 @@ IFIP allows a single IP address as well as IP ranges. You can also use an includ
 
 OCLC provides documentation on IfIP at their Common Conditions and Actions page here: https://help.oclc.org/Library_Management/EZproxy/Authenticate_users/Directives_and_configurations_for_authentication/Common_conditions_and_actions
 
+--IntrusionAPI--
+With the release of EZproxy v6.5 OCLC introduced the directive IntrusionAPI, which provides similar functionality to the audit and blocking methods discussed here. Either technique can be used. The EZproxy IP Blacklist will continue to be maintained and updated. For information on IntrusionAPI see: https://help.oclc.org/Library_Management/EZproxy/Configure_resources/IntrusionAPI
+
 --Additional Uses--
 The IP addresses listed here may also be used at the server or network level to block access to EZproxy and other campus resources. The specific methods to do so are too varied to outline here; network security personnel or server administrators at your institution should be consulted.
 
