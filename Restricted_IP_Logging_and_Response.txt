@@ -1,5 +1,8 @@
 --RESTRICTED IP LOGGING AND RESPONSE--
 
+Previously maintained by Paul Butler, Dartmouth College, paul.r.butler@dartmouth.edu
+This file/project is no longer actively maintained. Last updated: 2024-02-23
+
 Below is the contents of the "Restricted IP Logging and Response" page that was located on the The Unofficial EZproxy Self-Support Wiki. 
 
 All work below is by Duane Denham, Computer Specialist at Edmon Low Library, Oklahoma State University. I added this page to GitHub because it is a valuable technique that works in tandem with the EZProxy IP blacklist and I wanted to document his work somewhere. All credit goes to Duane Denham. 

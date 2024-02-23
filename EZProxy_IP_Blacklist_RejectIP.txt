@@ -1,11 +1,11 @@
 ## EZProxy_IP_Blacklist_RejectIP.txt
-## Maintained by Paul Butler at Ball State University
-## To contribute an IP address(es) to the list email them to: prbutler_at_bsu.edu
+## Previously maintained by Paul Butler, Dartmouth College, paul.r.butler@dartmouth.edu
+## This file/project is no longer actively maintained.
 ##
 ## This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 ## http://creativecommons.org/licenses/by-sa/4.0/
 ##
-## Last updated: 2022-04-15
+## Last updated: 2024-02-23
 
 RejectIP 1.9.14.55
 RejectIP 1.9.67.129
@@ -3763,7 +3763,6 @@ RejectIP 58.218.190.114
 RejectIP 58.218.204.207
 RejectIP 58.218.213.8
 RejectIP 58.219.124.170
-RejectIP 58.220.95.84
 RejectIP 58.220.102.35
 RejectIP 58.220.196.82
 RejectIP 58.221.24.3
@@ -5688,7 +5687,6 @@ RejectIP 64.237.56.99
 RejectIP 64.254.235.142
 RejectIP 65.19.167.174
 RejectIP 65.39.195.104
-RejectIP 65.49.2.0-65.49.2.255
 RejectIP 65.49.14.0-65.49.14.255
 RejectIP 65.49.38.138
 RejectIP 65.49.38.139
@@ -6762,7 +6760,6 @@ RejectIP 95.188.102.184
 RejectIP 95.211.101.196
 RejectIP 95.211.171.172
 RejectIP 95.211.186.147
-RejectIP 95.215.0.0-95.215.255.255
 RejectIP 96.18.125.220
 RejectIP 96.30.150.150
 RejectIP 96.31.81.0-96.31.81.255

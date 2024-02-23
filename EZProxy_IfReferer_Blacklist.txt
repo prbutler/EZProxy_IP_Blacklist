@@ -1,7 +1,7 @@
-############################################### 
+###############################################
 ## EZProxy_IfReferer_Blacklist.txt
-## Maintained by Paul Butler at Ball State University
-## To contribute a domain to the list email it to: prbutler_at_bsu.edu
+## Previously maintained by Paul Butler, Dartmouth College, paul.r.butler@dartmouth.edu
+## This file/project is no longer actively maintained.
 ##
 ## This IFReferer denies access to EZProxy from the defined domain, records it in your audit file, and
 ## 	redirects the user to denied.htm. You must have referer setup in the LogFormat for this to work 
@@ -21,7 +21,7 @@
 ## This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 ## http://creativecommons.org/licenses/by-sa/4.0/
 ##
-## Last updated: 2021-03-19
+## Last updated: 2024-02-23
 
 ::Common
 IfReferer *80lib.com*; Deny denied.htm

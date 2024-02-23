@@ -1,11 +1,11 @@
 --Welcome to the EZProxy IP Address Blacklist--
 
+Previously maintained by Paul Butler, Dartmouth College, paul.r.butler@dartmouth.edu
+This file/project is no longer actively maintained. Last updated: 2024-02-23
+
 This information was formerly located on The Unofficial EZproxy Self-Support Wiki, which is shutdown. 
 
 EZProxy_IP_Blacklist_RejectIP.txt is a list of contributed IP addresses and ranges that have been used to access, or attempt to access, EZproxy servers in an illegitimate way. This information can be used in a number of ways to better secure EZproxy. EZProxy_IP_Blacklist_IFIP.txt contains the same IP addresses presented EZProxy_IP_Blacklist_RejectIP.txt, but in a different format to be used with the IFIP method outlined below. 
-
-This list is maintained by Paul Butler at Ball State University. 
-To contribute an IP address(es) to the list email them to: prbutler@bsu.edu
 
 NOTE: EZproxy must be restarted for changes to config.txt to take effect.
 

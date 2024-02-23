@@ -1,12 +1,13 @@
 ## EZProxy_IP_Blacklist_IFIP.txt
-## Maintained by Paul Butler at Ball State University
-## To contribute an IP address(es) to the list email them to: prbutler_at_bsu.edu
+## Previously maintained by Paul Butler, Dartmouth College, paul.r.butler@dartmouth.edu
+## This file/project is no longer actively maintained.
+##
 ## Review documentation when using this method, the IPs need to be within a ::Common block. 
 ##
 ## This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 ## http://creativecommons.org/licenses/by-sa/4.0/
 ##
-## Last updated: 2022-04-15
+## Last updated: 2024-02-23
 
 IFIP 1.9.14.55 ; Set Match = "True"
 IFIP 1.9.67.129 ; Set Match = "True"
@@ -3764,7 +3765,6 @@ IFIP 58.218.190.114 ; Set Match = "True"
 IFIP 58.218.204.207 ; Set Match = "True"
 IFIP 58.218.213.8 ; Set Match = "True"
 IFIP 58.219.124.170 ; Set Match = "True"
-IFIP 58.220.95.84 ; Set Match = "True"
 IFIP 58.220.102.35 ; Set Match = "True"
 IFIP 58.220.196.82 ; Set Match = "True"
 IFIP 58.221.24.3 ; Set Match = "True"
@@ -5689,7 +5689,6 @@ IFIP 64.237.56.99 ; Set Match = "True"
 IFIP 64.254.235.142 ; Set Match = "True"
 IFIP 65.19.167.174 ; Set Match = "True"
 IFIP 65.39.195.104 ; Set Match = "True"
-IFIP 65.49.2.0-65.49.2.255 ; Set Match = "True"
 IFIP 65.49.14.0-65.49.14.255 ; Set Match = "True"
 IFIP 65.49.38.138 ; Set Match = "True"
 IFIP 65.49.38.139 ; Set Match = "True"
@@ -6763,7 +6762,6 @@ IFIP 95.188.102.184 ; Set Match = "True"
 IFIP 95.211.101.196 ; Set Match = "True"
 IFIP 95.211.171.172 ; Set Match = "True"
 IFIP 95.211.186.147 ; Set Match = "True"
-IFIP 95.215.0.0-95.215.255.255 ; Set Match = "True"
 IFIP 96.18.125.220 ; Set Match = "True"
 IFIP 96.30.150.150 ; Set Match = "True"
 IFIP 96.31.81.0-96.31.81.255 ; Set Match = "True"
